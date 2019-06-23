@@ -24,7 +24,7 @@ def get_ses():
     for potato in os.listdir(segment_dir):
         if (classifier(potato)):
             ++good
-        else
+        else:
             ++bad
     render_template("result.html", quantity = good + bad, quality = good / (good+bad), user_image = currentfile)
     time.sleep(60)
