@@ -1,4 +1,4 @@
-# hackbyte
+# Deep Potato Vision
 Loblaws Microsoft Hackathon Machine Vision project
 
 Project chosen: produce freshness detection
