@@ -11,7 +11,7 @@ from Azure import AzureUpload
 def takePicture():
     
     # Initialize Device
-    cam 		= 		cv2.VideoCapture(1)
+    cam 		= 		cv2.VideoCapture(0)
 
     # Set Resolution
     # cam 		= 		ChangeRes(cam, 1280, 720)
