@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 from readCam import takePicture
+import potato_detection
+import shutil
+import os
 
 app = Flask(__name__)
 
@@ -10,7 +13,10 @@ def kickstart():
 @app.route('/capture')
 def get_ses():
 	currentfile =  takePicture()
-	return render_template("result.html", user_image = currentfile)
+	shutil.rmtree('segmented')
+	hb_potato_detection(currentfile)
+	images = os.listdir('segmented')
+	return render_template("multi_result.html", image_list = images)
 
 
 if __name__ == '__main__':
