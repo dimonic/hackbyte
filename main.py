@@ -4,6 +4,8 @@ import potato_detection
 import shutil
 import os
 
+segment_dir = 'segmented'
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,9 +15,10 @@ def kickstart():
 @app.route('/capture')
 def get_ses():
     currentfile =  takePicture()
-    shutil.rmtree('segmented')
+    shutil.rmtree(segment_dir, ignore_errors)
+    os.mkdir(segment_dir)
     hb_potato_detection(currentfile)
-    images = os.listdir('segmented')
+    images = os.listdir(segment_dir)
     return render_template("multi_result.html", image_list = images)
 
 
