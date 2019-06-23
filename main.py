@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from readCam import takePicture
-import potato_detection
+from potato_detection import hb_potato_detection
 import shutil
 import os
 import time
