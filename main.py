@@ -12,11 +12,11 @@ def kickstart():
 
 @app.route('/capture')
 def get_ses():
-	currentfile =  takePicture()
-	shutil.rmtree('segmented')
-	hb_potato_detection(currentfile)
-	images = os.listdir('segmented')
-	return render_template("multi_result.html", image_list = images)
+    currentfile =  takePicture()
+    shutil.rmtree('segmented')
+    hb_potato_detection(currentfile)
+    images = os.listdir('segmented')
+    return render_template("multi_result.html", image_list = images)
 
 
 if __name__ == '__main__':
