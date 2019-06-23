@@ -1,7 +1,7 @@
 from potato_detector.python.predict import *
 from PIL import Image
 
-def hb_detect_potatoes(image_file, threshold = .5, outdir = 'segmented'):
+def hb_detect_potatoes(image_file, threshold = .5, outdir = 'segmented/'):
     hsize = 144
     wsize = 144
     boxes = hb_detector(image_file)
